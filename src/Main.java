@@ -31,7 +31,9 @@ public class Main {
         deal(deck, player1hand, player2hand);
         System.out.println("******************************************************************");
 
-        //War!!
+        /***********************************************************************************************
+         * Game of war
+         */
         while (!(player1hand.isEmpty() && player2hand.isEmpty())) {
 
             System.out.println("Match #" + matchNumber++ + ":");
@@ -73,11 +75,14 @@ public class Main {
             //Print points to console
             System.out.println("\nPlayer #1's score: " + player1Score + " points.");
             System.out.println("Player #2's score: " + player2Score + " points.");
+            System.out.println();
             System.out.println("******************************************************************");
 
         }
 
-        //Final results!
+        /****************************************************************************************************
+         * Final results
+         */
         System.out.println("FINAL RESULTS:");
         System.out.println("******************************************************************");
 
