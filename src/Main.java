@@ -3,7 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
 
-    static final int DECK_SIZE = 52;
+    private static final int DECK_SIZE = 52;
 
     public static void main(String[] args) {
 
@@ -198,7 +198,7 @@ public class Main {
      *
      * @param deck the deck
      */
-    static void fillDeck(Stack deck) {
+    private static void fillDeck(Stack deck) {
 
         for (int i = 0; i < DECK_SIZE; i++) {
             deck.push(i);
@@ -213,11 +213,13 @@ public class Main {
      * @param hand_1 player one's hand
      * @param hand_2 player two's hand
      */
-    static void deal(Stack deck, Stack hand_1, Stack hand_2) {
+    private static void deal(Stack deck, Stack hand_1, Stack hand_2) {
 
         int card = 0;
 
         while (!deck.isEmpty()) {
+
+            //Pop from deck to player's hands
             hand_1.push(deck.pop());
             hand_2.push(deck.pop());
         }
@@ -232,7 +234,7 @@ public class Main {
      * @param card_2 player 2's card
      * @return winner's card or -1 if tie
      */
-    static int compare(int card_1, int card_2) {
+    private static int compare(int card_1, int card_2) {
 
         if (card_1 % 13 > card_2 % 13) {
             return card_1;                          //player one
