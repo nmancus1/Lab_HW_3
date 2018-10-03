@@ -7,7 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //String arrays representing suits and ranks of cards
+        //String arrays representing suits and ranks of cards, the use of the % operator allows for the correct
+        //distribution through the ranks for comparisons, e.g. (card % 13 = correct rank), and the / operator
+        //allows for the correct indexing of the suits, e.g. (card / 13 = correct suit)
         final String[] RANKS = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
         final String[] SUITS = {"Spades", "Hearts", "Diamonds", "Clubs"};
 
