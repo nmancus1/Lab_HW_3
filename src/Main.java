@@ -11,9 +11,10 @@ public class Main {
         final String[] RANKS = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
         final String[] SUITS = {"Spades", "Hearts", "Diamonds", "Clubs"};
 
-        //Accumulator for player's scores
+        //Accumulator for player's scores and match number
         int player1Score = 0;
         int player2Score = 0;
+        int matchNumber = 1;
 
         //Stacks, representing decks
         Stack<Node> deck = new Stack<>();
@@ -26,9 +27,12 @@ public class Main {
         fillDeck(deck);
         shuffle(deck);
         deal(deck, player1hand, player2hand);
+        System.out.println("******************************************************************");
 
         //War!!
         while (!(player1hand.isEmpty() && player2hand.isEmpty())) {
+
+            System.out.println("Match #" + matchNumber++ + ":");
 
             //Place cards on table
             int card_1 = (int) player1hand.pop();
@@ -71,6 +75,8 @@ public class Main {
 
         }
 
+        //Final results!
+        System.out.println("FINAL RESULTS:");
         System.out.println("******************************************************************");
 
         //Declare winner of game
@@ -81,6 +87,10 @@ public class Main {
         } else {
             System.out.println("The match results in a tie!");      //or tie
         }
+
+        //Print final scores
+        System.out.println("\nPlayer #1's final score: " + player1Score + " points.");
+        System.out.println("Player #2's final score: " + player2Score + " points.");
 
         System.out.println();
 
@@ -93,7 +103,14 @@ public class Main {
         while (!player1winnings.isEmpty()) {
 
             int card = (int) player1winnings.pop();
-            System.out.print(RANKS[card % 13] + " of " + SUITS[card / 13] + ", ");
+
+            if (player1winnings.peek() != null) {
+                System.out.print(RANKS[card % 13] + " of " + SUITS[card / 13] + ", ");
+            } else {
+                System.out.print(RANKS[card % 13] + " of " + SUITS[card / 13]); //if last card, no comma
+
+            }
+
             cardCounter++;
 
             //Newline every eight cards
@@ -110,7 +127,13 @@ public class Main {
         while (!player2winnings.isEmpty()) {
 
             int card = (int) player2winnings.pop();
-            System.out.print(RANKS[card % 13] + " of " + SUITS[card / 13] + ", ");
+
+            if (player2winnings.peek() != null) {
+                System.out.print(RANKS[card % 13] + " of " + SUITS[card / 13] + ", ");
+            } else {
+                System.out.print(RANKS[card % 13] + " of " + SUITS[card / 13]);//if last card, no comma
+
+            }
             cardCounter++;
 
             //Newline every eight cards
