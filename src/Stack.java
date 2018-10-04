@@ -1,3 +1,13 @@
+/**
+ * Nick Mancuso
+ * CIS211
+ * 10.2.18
+ * <p>
+ * This data structure represents a stack
+ *
+ * @param <T>
+ */
+
 public class Stack<T> implements StackInterface {
 
     private Node<T> head;
@@ -12,11 +22,11 @@ public class Stack<T> implements StackInterface {
         this.head = null;
     }
 
-        /**
-         * Adds a new entry to the top of this stack.
-         *
-         * @param newEntry An object to be added to the stack.
-         */
+    /**
+     * Adds a new entry to the top of this stack.
+     *
+     * @param newEntry An object to be added to the stack.
+     */
     @Override
     public void push(Object newEntry) {
 

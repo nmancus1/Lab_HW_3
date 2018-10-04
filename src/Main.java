@@ -1,3 +1,11 @@
+/**
+ * Nick Mancuso
+ * CIS211
+ * 10.2.18
+ * <p>
+ * This program simulates a game of war with two players.
+ */
+
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
