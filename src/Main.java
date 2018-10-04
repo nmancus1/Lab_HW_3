@@ -92,7 +92,7 @@ public class Main {
         } else if (player2Score > player1Score) {
             System.out.println("The winner is Player #2!");
         } else {
-            System.out.println("The match results in a tie!");      //or tie
+            System.out.println("The game results in a tie!");      //or tie
         }
 
         //Print final scores
@@ -214,8 +214,6 @@ public class Main {
      * @param hand_2 player two's hand
      */
     private static void deal(Stack deck, Stack hand_1, Stack hand_2) {
-
-        int card = 0;
 
         while (!deck.isEmpty()) {
 
